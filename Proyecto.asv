@@ -1,5 +1,21 @@
-names = cell(10,1);
-for i=1:10
+trama=input('Ingrese el numero de tramas: ');
+rodajas=trama-1;
+names = cell(trama,1);
+for i=1:trama
     s = ['Ingrese el valor de la trama: ' num2str(i) ': '];
-    names{i} = input ['Sample Text ' num2str(i)];
+    names{i} = input(s);
 end
+
+ concatenacion=' ';
+ rods=' ';
+for i=1:tram
+    n=names{i};
+    lar=length(n);
+    while(lar ~= 0)
+        concatenacion =[num2str(concatenacion), n(lar), num2str(i)];
+        lar=lar-1;
+    end
+end
+    rods=[num2str(rods),'|', concatenacion,'|'];
+    
+disp(rods);
