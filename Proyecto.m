@@ -6,17 +6,25 @@ for i=1:trama
     names{i} = input(s);
 end
 
- concatenacion=' ';
- rods=' ';
-while(true)
-    n=names{i};
-    lar=length(n);
-    while(lar ~= 0)
-        concatenacion =[num2str(concatenacion), n(lar), num2str(i)];
-        lar=lar-1;
-    end
-    break;
+for i=1:trama
+    largos(i)=length(names{i});
 end
-    rods=[num2str(rods),'|', concatenacion,'|'];
-    
-disp(rods);
+maximos=max(largos);
+disp(maximos);
+ concatenacion=' ';
+  n=names{i};
+    lar=length(n);
+    multix='';
+
+for h=1:trama    
+        less=length(names{h});
+        if (less ~= 0)
+            letra=names{h};
+             concatenacion =[letra(less), num2str(h), concatenacion];   
+        else
+            concatenacion =[' ', concatenacion];
+        end
+end
+   
+%disp(num2str(trama));
+disp(concatenacion);
