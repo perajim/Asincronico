@@ -1,0 +1,5 @@
+names = cell(10,1);
+for i=1:10
+    s = ['Ingrese el valor de la trama: ' num2str(i) ': '];
+    names{i} = input ['Sample Text ' num2str(i)];
+end
