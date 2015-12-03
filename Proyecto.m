@@ -11,19 +11,34 @@ for i=1:trama
 end
 maximos=max(largos);
 disp(maximos);
- concatenacion=' ';
+ concatenacion='|';
   n=names{i};
     lar=length(n);
     multix='';
-
-for h=1:trama    
-        less=length(names{h});
-        if (less ~= 0)
-            letra=names{h};
-             concatenacion =[letra(less), num2str(h), concatenacion];   
-        else
-            concatenacion =[' ', concatenacion];
+  
+for h=maximos:-1:1 
+     menos = 0;
+        for f=1:trama
+            less=length(names{f});
+            if (menos ~= rodajas)
+                if (less ~= 0)
+                    letra=names{f};                
+                     concatenacion =[letra(f), num2str(f), concatenacion,];   
+                else
+                    concatenacion =['', concatenacion];
+                end            
+            else 
+                if (less ~= 0)
+                    letra=names{f};                
+                     concatenacion =[' |',letra(f), num2str(f), concatenacion];   
+                else
+                    concatenacion =['', concatenacion];
+                end 
+                
+            end
+            menos = menos+1;            
         end
+        concatenacion =['|', concatenacion];
 end
    
 %disp(num2str(trama));
