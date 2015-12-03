@@ -20,18 +20,17 @@ for h=maximos:-1:1
      menos = 0;
         for f=1:trama
             less=length(names{f});
-            if (menos < rodajas-1)                
+            if (f~=trama)                
                     letra=names{f};                    
                      concatenacion =[letra(h), num2str(f), concatenacion,];                           
             else                
-                    letra=names{f};                    
-                     concatenacion =[' |',letra(h), num2str(f), concatenacion];   
-                
+                   letra=names{f};                    
+                    concatenacion =[letra(h), num2str(f),'| |',concatenacion];                  
             end
             menos = menos+1; 
            div = div + 1;         
         end
-        concatenacion =['|', concatenacion];
+        %concatenacion =['| ', concatenacion];
 end
    
 %disp(num2str(trama));
