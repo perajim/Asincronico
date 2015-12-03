@@ -20,18 +20,29 @@ maximos=max(largos);
    menos = 0;
    dimis =0;
 for h=maximos:-1:1    
-        for f=1:trama         
-            less=length(names{f});            
-                if (menos~=rodajas) 
-                        menos = menos+1;
-                        letra=names{f};                         
-                        concatenacion =[letra(h), num2str(f), concatenacion,];    
-                else  
-                       menos = 1;
-                       letra=names{f};                       
-                       concatenacion =[letra(h), num2str(f),'| |',concatenacion]; 
-                end                
-        end        
+        for f=1:trama              
+                less=length(names{f}); 
+                    if (menos~=3) 
+                            
+                            letra=names{f};
+                            if((less-dimis)<1)
+                                concatenacion =['', concatenacion,];
+                            else
+                                menos = menos+1;
+                                concatenacion =[letra(less-dimis), num2str(f), concatenacion,];
+                            end
+                    else  
+                           %menos = 1;
+                           letra=names{f};
+                            if((less-dimis)<1)
+                                concatenacion =['', concatenacion,];
+                            else
+                                menos = 1;
+                                 concatenacion =[letra(less-dimis), num2str(f),'| |',concatenacion];
+                            end;
+                    end                    
+        end
+         dimis = dimis+1;
 end
    concatenacion =['|', concatenacion];
 %disp(num2str(trama));
